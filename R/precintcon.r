@@ -1,6 +1,6 @@
 #' @title Precipitation Intensity, Concentration and Anomaly Analysis
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
-#' @description This package contains functions to analyze the precipitation 
+#' @description It contains functions to analyze the precipitation 
 #' intensity, concentration and anomaly.
 #' @name precintcon
 #' @docType package

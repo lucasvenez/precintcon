@@ -6,7 +6,7 @@
 \alias{precintcon-package}
 \title{Precipitation Intensity, Concentration and Anomaly Analysis}
 \description{
-This package contains functions to analyze the precipitation
+It contains functions to analyze the precipitation
 intensity, concentration and anomaly.
 }
 \author{
