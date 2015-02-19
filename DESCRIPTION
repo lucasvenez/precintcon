@@ -6,7 +6,7 @@ Date: 2015-02-06
 LazyData: true
 Author: Lucas Venezian Povoa
 Maintainer: Lucas Venezian Povoa <lucasvenez@gmail.com>
-Description: This package contains functions to analyze the precipitation
+Description: It contains functions to analyze the precipitation
     intensity, concentration and anomaly.
 URL: https://github.com/lucasvenez/precintcon
 BugReports: https://github.com/lucasvenez/precintcon/issues
