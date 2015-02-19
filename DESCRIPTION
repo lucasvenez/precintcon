@@ -1,0 +1,83 @@
+Package: precintcon
+Type: Package
+Title: Precipitation Intensity, Concentration and Anomaly Analysis
+Version: 2.1
+Date: 2015-02-06
+LazyData: true
+Author: Lucas Venezian Povoa
+Maintainer: Lucas Venezian Povoa <lucasvenez@gmail.com>
+Description: This package contains functions to analyze the precipitation
+    intensity, concentration and anomaly.
+URL: https://github.com/lucasvenez/precintcon
+BugReports: https://github.com/lucasvenez/precintcon/issues
+Depends:
+    R (>= 2.14),
+    ggplot2,
+    scales
+License: GPL (>= 2)
+Collate:
+    'as.precintcon.annual.r'
+    'as.annual.r'
+    'as.precintcon.daily.r'
+    'as.daily.r'
+    'as.precintcon.decade.r'
+    'as.decade.r'
+    'precintcon.deciles.analysis.r'
+    'deciles.r'
+    'as.precintcon.deciles.r'
+    'as.deciles.r'
+    'precintcon.fd.r'
+    'as.precintcon.fd.r'
+    'as.fd.r'
+    'as.precintcon.monthly.r'
+    'as.monthly.r'
+    'as.precintcon.seasonal.r'
+    'as.seasonal.r'
+    'precintcon.ci.per.year.analysis.r'
+    'ci.per.year.r'
+    'precintcon.ci.analysis.r'
+    'ci.r'
+    'precintcon.limits.analysis.r'
+    'limits.r'
+    'precintcon.pci.analysis.r'
+    'pci.r'
+    'precintcon.pn.analysis.r'
+    'pn.r'
+    'precintcon.plot.deciles.r'
+    'pplot.deciles.r'
+    'precintcon.plot.histogram.r'
+    'pplot.histogram.r'
+    'precintcon.plot.lorenz.r'
+    'pplot.lorenz.r'
+    'precintcon.plot.pci.r'
+    'pplot.pci.r'
+    'precintcon.plot.pn.r'
+    'pplot.pn.r'
+    'precintcon.plot.rai.r'
+    'pplot.rai.r'
+    'precintcon.plot.spi.r'
+    'pplot.spi.r'
+    'precintcon.H.r'
+    'precintcon.Z.r'
+    'precintcon.b.r'
+    'precintcon.classification.r'
+    'precintcon.gamma.r'
+    'precintcon.ln.a.r'
+    'precintcon.max.r'
+    'precintcon.min.r'
+    'precintcon.monthly.aggregation.r'
+    'precintcon.plot.lorenz.ungrouped.r'
+    'precintcon.pn.r'
+    'precintcon.r'
+    'precintcon.r.squared.r'
+    'precintcon.rai.analysis.r'
+    'precintcon.read.data.r'
+    'precintcon.spi.analysis.r'
+    'precintcon.spi.per.year.analysis.r'
+    'precintcon.stat.analysis.r'
+    'precintcon.trend.test.r'
+    'rai.r'
+    'read.data.r'
+    'spi.per.year.r'
+    'spi.r'
+    'stat.r'

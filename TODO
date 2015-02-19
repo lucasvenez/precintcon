@@ -1,0 +1,32 @@
+- Data consistency checking continuity of dates and non-existent values in some days (e.g, feb 30th);
+- Define y limit based on all input data for all graphs;
+- Define functions for estimating values for missing data;
+- Provide another distribution possibilities for SPI analysis;  
+- Implement weekly scale for PN analysis;
+- Change "for" loops by lapply for input lists in order to increase performance;
+- Simplifying the function's names
+- Undocumented code objects:
+  ‘as.decade’ 
+  ‘as.deciles’ 
+  ‘as.fd’ 
+  ‘as.precintcon.decade’
+  ‘as.precintcon.deciles’ 
+  ‘as.precintcon.fd’ 
+  ‘precintcon.A’
+  ‘precintcon.H’ 
+  ‘precintcon.S’ 
+  ‘precintcon.Z’ 
+  ‘precintcon.alpha’
+  ‘precintcon.b’ 
+  ‘precintcon.beta’ 
+  ‘precintcon.ci’
+  ‘precintcon.classification’ 
+  ‘precintcon.fd’ 
+  ‘precintcon.gamma’
+  ‘precintcon.ln.a’ 
+  ‘precintcon.max’ 
+  ‘precintcon.min’
+  ‘precintcon.monthly.aggregation’ 
+  ‘precintcon.pn’ 
+  ‘precintcon.r.squared’
+  ‘precintcon.trend.test’
