@@ -12,8 +12,8 @@ concentration, and anomaly. It supports the following indices:
 
 To install:
 
-* the least released version `install.packages("precintcon")`
-* the least development version `install_git("lucasvenez/precintcon")`
+* the latest released version: `install.packages("precintcon")`
+* the latest development version: `install_git("lucasvenez/precintcon")`
 
 Getting start:
 
