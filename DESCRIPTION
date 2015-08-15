@@ -1,10 +1,11 @@
 Package: precintcon
 Type: Package
 Title: Precipitation Intensity, Concentration and Anomaly Analysis
-Version: 2.1
-Date: 2015-02-06
+Version: 2.2
+Date: 2015-08-11
 LazyData: true
-Author: Lucas Venezian Povoa
+Author: Lucas Venezian Povoa  [aut, cre],
+   Jonas Teixeira Nery [ctb]
 Maintainer: Lucas Venezian Povoa <lucasvenez@gmail.com>
 Description: It contains functions to analyze the precipitation
     intensity, concentration and anomaly.

@@ -13,7 +13,7 @@ concentration, and anomaly. It supports the following indices:
 To install:
 
 * the latest released version: `install.packages("precintcon")`
-* the latest development version: `install_git("lucasvenez/precintcon")`
+* the latest development version: `install_github("lucasvenez/precintcon")`
 
 Getting start:
 

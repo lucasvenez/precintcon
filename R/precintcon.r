@@ -1,5 +1,6 @@
 #' @title Precipitation Intensity, Concentration and Anomaly Analysis
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
+#' @author Jonas Teixeira Nery \email{jonas@@ourinhos.unesp.br}
 #' @description It contains functions to analyze the precipitation 
 #' intensity, concentration and anomaly.
 #' @name precintcon

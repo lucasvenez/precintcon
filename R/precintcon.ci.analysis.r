@@ -27,15 +27,7 @@ precintcon.ci.analysis <- function(..., interval = 1) {
 				S  <- 5000 - A
 				ci <- 2 * S / 10000
 				
-				inverse = function (f, lower = -100, upper = 100) {
-					function (y) uniroot((function (x) f(x) - y), lower = lower, upper = upper)[1]
-				}
-				
-				x_ <- inverse((function(x) a * x * exp (b * x)), lower=0, upper=100)
-				
-				data <- data.frame(a=a, b=b, r2=r2, A=A, S=S, ci=ci, 
-						PP_5=x_(05)$root, PP_10=x_(10)$root, PP_15=x_(15)$root, PP_20=x_(20)$root, 
-						PP_25=x_(25)$root, PP_30=x_(30)$root, PP_50=x_(50)$root)
+				data <- data.frame(a=a, b=b, r2=r2, A=A, S=S, ci=ci)
 				
 				class(data) <- c("data.frame", "precintcon.ci")
 		
