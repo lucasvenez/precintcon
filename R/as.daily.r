@@ -4,7 +4,8 @@ NULL
 #' @name as.daily
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
 #' @aliases as.precintcon.daily as.daily
-#' @title Convert a data.frame to a precintcon.daily.
+#' 
+#' @title Converting a data.frame to a daily precipitation serie
 #' @description Converts a \code{data.frame} to a \code{precintcon.daily}.
 #' @param object a precintcon.daily or a data.frame containing 33 columns.
 #' @param na.value the value used for representing non-existent values

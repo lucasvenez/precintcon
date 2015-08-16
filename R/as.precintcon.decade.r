@@ -1,13 +1,15 @@
 #' @export
 as.precintcon.decade <- function(object) {
-	object <- as.precintcon.annual(object)
-	
-	if ((max(object[,1]) - min(object[,1]) %% 10 != 0))
-		stop("input data should has a number of rows multiple of 10")
+
+  object <- as.precintcon.annual(object)
 	
 	result <- data.frame()
 	
-	for (i in seq(i: nrow(object), by=10))
+	start <- head(which(head(object$year, n = 10) %% 10 == 0), n = 1)
+	end   <- nrow(object) - tail(which(rev(tail(object$year, n = 10)) %% 10 == 9), n = 1) + 1
+	
+	print(seq(start, end, by = 10))
+	for (i in seq(start, end, by = 10))
 		result <- rbind(result, data.frame(year=object[i,1], precipitation=sum(object[i:(i+9),2])))
 	
 	class(result) <- c("data.frame", "precintcon.decade")

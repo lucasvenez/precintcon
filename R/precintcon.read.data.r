@@ -1,15 +1,12 @@
 #' @export
-precintcon.read.data <- function(
-   file, 
-   sep      = ",", 
-   dec      = ".", 
-   header   = TRUE, 
-   na.value = NA
-) {
-	
+precintcon.read.data <- function(file, sep = ",", dec = ".", header = TRUE, na.value = NA) {
+
 	data <- read.table(file, header=header, sep=sep, dec=dec)
 	
-	data[data == na.value] <- NA
+	if (!(length(na.value) == 1 && is.na(na.value)))
+	  for (i in 1:length(na.value))
+	    for (j in 1:ncol(data))
+	      data[which(data[j] == na.value[i]),j] <- NA
 	
 	data <- data[!is.na(data[1]),]
 	data <- data[!is.na(data[2]),]
@@ -33,18 +30,32 @@ precintcon.read.data <- function(
 		stop(m)
 	}
 	
-	if (ncol(data) == 33) {
+	cnames <- c("year", "month")
+	
+	if (ncol(data) >= 33) {
 		
+	  data <- data[,1:33]
+	  
+	  for(i in 1:31)
+	    cnames <- c(cnames, paste("d", i, sep = ""))
+	  
 		class(data) <- c(class(data), "precintcon.daily")		
 		
-	} else if (ncol(data) == 3) {
+	} else if (ncol(data) >= 3) {
 		
+	  data <- data[,1:3]
+	  
 		class(data) <- c(class(data), "precintcon.monthly")	
 		
 	} else {
 		
-		stop("Invalid data. Please, check your input file. It should have 3 or 33 columns.")
+		stop("Invalid data. Please, check your input file. It should has 3 or 33 columns.")
 	}
+	
+	colnames(data) <- cnames
+	
+	for (i in 1:ncol(data))
+	  data[grep(" +", data[,i]),i] <- NA
 	
 	return(data)
 }

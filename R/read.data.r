@@ -2,8 +2,9 @@
 NULL
 
 #' @name read.data
-#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
 #' @aliases precintcon.read.data read.data 
+#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
+#' 
 #' @title Load a precipitation series 
 #' @description Load a file with a daily or monthly precipitation series. 
 #' @usage read.data(file, sep = ",", dec = ".", header = TRUE, na.value = NA) 
@@ -32,19 +33,13 @@ NULL
 #'   \code{\link{read.csv2}}
 #' @examples 
 #' ##
-#' # Loading a serie on a Windows operating system
+#' # Loading a serie on Windows
 #' \dontrun{d1 <- read.data("C:\PRECINTCON\203040.csv", sep = ";", dec = ".", header = TRUE)}
 #' 
 #' ##
-#' # Loading a serie on an Unix-like operating system
+#' # Loading a serie on Unix-like
 #' \dontrun{d1 <- read.data("/home/precintcon/203040.csv", sep = ";", dec = ".", header = TRUE)}
 #' @keywords import read data read table file precipitation 
-read.data <- function(
-      file, 
-      sep      = ",", 
-      dec      = ".", 
-      header   = TRUE, 
-      na.value = NA
-) {
-   return(precintcon.read.data(file, sep, dec, header, na.value))  
-}
+#' @export
+read.data <- function(file, sep = ",", dec = ".", header = TRUE, na.value = NA)
+   precintcon.read.data(file = file, sep = sep, dec = dec, header = header, na.value = na.value)

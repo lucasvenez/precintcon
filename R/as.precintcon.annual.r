@@ -7,7 +7,7 @@ as.precintcon.annual <- function(object) {
 	if (is.element("precintcon.daily", class(object)))
 		object <- as.precintcon.monthly(object)
 	
-	result <- aggregate(object[,3], by=list(object[,1]), FUN=sum)
+	result <- aggregate(object[,3], by = list(object[,1]), FUN = sum)
 	
 	colnames(result) <- c("year", "precipitation")
 	

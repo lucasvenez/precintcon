@@ -5,7 +5,7 @@ NULL
 #' @aliases as.precintcon.seasonal as.seasonal 
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
 #' 
-#' @title Converting to seasonal precipitation serie.
+#' @title Converting to seasonal precipitation serie
 #' @description It converts a daily or monthly precipitation serie 
 #' to a seasonal serie according to meteorological seasons.
 #' @details If the serie has no a month of a season, it is waived in convertion, e.g., 

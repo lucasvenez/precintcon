@@ -5,7 +5,7 @@ Version: 2.2
 Date: 2015-08-11
 LazyData: true
 Author: Lucas Venezian Povoa  [aut, cre],
-   Jonas Teixeira Nery [ctb]
+    Jonas Teixeira Nery [ctb]
 Maintainer: Lucas Venezian Povoa <lucasvenez@gmail.com>
 Description: It contains functions to analyze the precipitation
     intensity, concentration and anomaly.
@@ -17,6 +17,7 @@ Depends:
     scales
 License: GPL (>= 2)
 Collate:
+    'app.r'
     'as.precintcon.annual.r'
     'as.annual.r'
     'as.precintcon.daily.r'
@@ -38,10 +39,14 @@ Collate:
     'ci.per.year.r'
     'precintcon.ci.analysis.r'
     'ci.r'
+    'cv.r'
+    'ff.index.r'
     'precintcon.limits.analysis.r'
     'limits.r'
     'precintcon.pci.analysis.r'
     'pci.r'
+    'pci.seasonal.r'
+    'pci.supraseasonal.r'
     'precintcon.pn.analysis.r'
     'pn.r'
     'precintcon.plot.deciles.r'
@@ -76,9 +81,10 @@ Collate:
     'precintcon.spi.analysis.r'
     'precintcon.spi.per.year.analysis.r'
     'precintcon.stat.analysis.r'
-    'precintcon.trend.test.r'
     'rai.r'
     'read.data.r'
     'spi.per.year.r'
     'spi.r'
     'stat.r'
+    'tii.r'
+    'trend.test.r'

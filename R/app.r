@@ -15,7 +15,12 @@
 #' \item \code{relative} is the percentage of precipitation benerated by \code{percentage}% of the rainiest days.
 #' }
 #' @examples
+#' ##
+#' # Loading the daily precipitation serie
 #' data(daily) 
+#' 
+#' ##
+#' # Calculating amount and percentage of precipitation using different parameters
 #' 
 #' app(daily)
 #' 

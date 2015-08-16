@@ -2,8 +2,10 @@
 NULL
 
 #' @name as.annual
+#' @aliases as.precintcon.annual as.annual
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
-#' @title Convert a precipitation serie to an annual serie
+#' 
+#' @title Converting to seasonal precipitation serie.
 #' @description Converts a daily, monthly, or seasonal precipitation serie to an 
 #' annual serie.
 #' @usage as.annual(object)
@@ -14,7 +16,6 @@ NULL
 #' \item \code{year} is the year.
 #' \item \code{precipitation} is the precipitation amount in millimeters.
 #' }
-#' @aliases as.precintcon.annual as.annual
 #' @seealso 
 #' \code{\link{as.daily}}
 #' \code{\link{as.monthly}}

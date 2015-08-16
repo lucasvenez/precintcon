@@ -3,16 +3,20 @@
 #' @author Lucas Venezian Povoa
 #' 
 #' @title Temporaly Irregularity Index
-#' @description It calculate the temporaly irregularity index according function sum(log(Pi+1/Pi))/(n-1),
+#' @description It calculates the temporaly irregularity index according to the function sum(log(Pi+1/Pi))/(n-1),
 #' where Pi is the precipitation amount of year i, and n is the number of years.
-#' @details Daily, monthly or seasonal precipitation series are transformed to annual series.
+#' @details Daily or monthly precipitation series are transformed to annual series.
 #' @usage tii(object)
-#' @param object is a daily, monthly or seasonal precipitation serie
-#' @return the temporaly irregularity index
-#' @example
-#' data(montly)
+#' @param object is a daily or monthly precipitation serie
+#' @return the temporaly irregularity index according to the function sum(log(Pi+1/Pi))/(n-1)
+#' @examples
+#' ##
+#' # Loading the monthly precipitation serie
+#' data(monthly)
 #' 
-#' tii(montly)
+#' ##
+#' # Calculationg the Temporaly Irregularity Index
+#' tii(monthly)
 #' @export
 tii <- function(object) {
   object <- as.annual(object)

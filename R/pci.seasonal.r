@@ -1,8 +1,26 @@
 #' @name pci.seasonal
-#' @title Seasonal PCI
+#' @aliases pci.seasonal
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
-#' @param object a complete daily, monthly or seasonal precipitation serie
-pci.seasonal <- function(object, hemisthere = c("n", "s")) {
+#' 
+#' @title Seasonal Precipitation Concentration Index
+#' @param object is a daily or monthly precipitation serie
+#' @param hemisthere is the hemisthere, "n" for northern and "s" for south, of the precipitation serie
+#' @return A data.frame containing the following variables:
+#' \itemize{
+#' \item \code{year} is the year;
+#' \item \code{season} is the meteorological season; and
+#' \item \code{pci.seasonal} is the seasonal perceptation concentration index.
+#' }
+#' @examples 
+#' ##
+#' # Loading the daily precipitation serie
+#' data(daily)
+#' 
+#' ##
+#' # Calculating the seasonal perceptation concentration index
+#' pci.seasonal(daily, hemisthere = "s")
+#' @export
+pci.seasonal <- function(object, hemisthere) {
   
   object <- as.precintcon.monthly(object)
   
@@ -13,13 +31,14 @@ pci.seasonal <- function(object, hemisthere = c("n", "s")) {
   start <- which(object$month == 3)[1]
   
   for(i in seq(start, nrow(object), by = 3)) {
-    if (nrow(object) - i < 2) break;
+    
+    if (nrow(object) - i < 2) break
     
     result <- rbind(result, 
               data.frame(
-                year          = object[i,1], 
-                season        = station[abs((i - start) %/% 3 + ifelse(hemisthere == "n", 0, 2)) %% 4 + 1], 
-                pci.seasonal  = (sum(object[i:(i+2),3]**2)/sum(object[i:(i+2),3])**2)*25))
+                year         = object[i,1], 
+                season       = station[abs((i - start) %/% 3 + ifelse(hemisthere == "n", 0, 2)) %% 4 + 1], 
+                pci.seasonal = (sum(object[i:(i+2),3]**2)/sum(object[i:(i+2),3])**2)*25))
   }
   
   class(result) <- c("data.frame", "precintcon.seasonal")

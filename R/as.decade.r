@@ -2,11 +2,15 @@
 NULL
 
 #' @name as.decade
-#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
-#' @title Convert a precipitation serie to a decade serie
 #' @aliases as.precintcon.decade as.decade
-#' @description Converts a daily, monthly, seasonal, or annual 
+#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
+#' 
+#' @title Converting a precipitation serie to a decade serie
+#' @description It converts a daily, monthly or annual 
 #' precipitation serie to a decade serie.
+#' @details It excludes no complete decades for converting the serie, e.g., a serie starting in 1977 and
+#' finishing in 2008 will have the year 1977 to 1979 and 2000 to 2008 excluded, resulting into a serie of
+#' the years 1980 and 1990.
 #' @usage as.decade(object)
 #' @param object a precintcon.daily, precintcon.monthly, precintcon.seasonal,
 #' precintcon.annual object or a data.frame containing 33 or 3 columns.
@@ -27,9 +31,7 @@ NULL
 #' 
 #' ##
 #' # Converting precipitation
-#' as.monthly(daily)
+#' as.decade(daily)
 #' @keywords decade precipitation
 #' @export
-as.decade <- function(object) {
-   return(as.precintcon.decade(object))  
-}
+as.decade <- function(object) as.precintcon.decade(object)
