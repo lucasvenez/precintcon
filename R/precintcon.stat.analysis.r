@@ -1,5 +1,5 @@
 #' @export
-precintcon.stat.analysis <- function(...) {
+precintcon.stat.analysis <- function(..., args = NA) {
 	
 	l <- list(...)
 	
@@ -7,7 +7,7 @@ precintcon.stat.analysis <- function(...) {
 		
 		data <- data.frame()
 		
-		pars <- as.list(match.call()[1:length(l)+1])
+		pars <- ifelse(is.na(args), as.character(match.call()[1:length(l)+1]), args)
 		
 		for (i in 1:length(l)) {
 			

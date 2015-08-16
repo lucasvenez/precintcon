@@ -8,7 +8,7 @@
 #' @param X is the cumulative percentage of rainy days.
 #' @param Y is the cumulative percentage of rainfall amounts.
 #' @return \code{b} 
-#' @seealso \code{\link{precintcon.ci.analysis}} 
+#' @seealso \code{\link{ci}} 
 #' @keywords precipitation concentration index 
 precintcon.b <- function(X, Y) {
 	

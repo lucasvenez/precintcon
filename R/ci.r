@@ -23,20 +23,6 @@ NULL
 #' \item \code{A} is the area over the exponential curve.
 #' \item \code{S} is the are compressed for the exponential curve.
 #' \item \code{ci} is the concentration index.
-#' \item \code{PP\_5} is the precipitation percentage determined by 5\% of the 
-#' raining days.
-#' \item \code{PP\_10} is the precipitation percentage determined by 10\% of the 
-#' raining days.
-#' \item \code{PP\_15} is the precipitation percentage determined by 15\% of the 
-#' raining days.
-#' \item \code{PP\_20} is the precipitation percentage determined by 20\% of the 
-#' raining days.
-#' \item \code{PP\_25} is the precipitation percentage determined by 25\% of the 
-#' raining days.
-#' \item \code{PP\_30} is the precipitation percentage determined by 30\% of the 
-#' raining days.
-#' \item \code{PP\_50} is the precipitation percentage determined by 50\% of the 
-#' raining days.
 #' }
 #' @seealso
 #' \code{\link{pplot.lorenz}}
@@ -52,6 +38,4 @@ NULL
 #' ci(daily, interval = 1)
 #' @keywords concentration index precipitation
 #' @export
-ci <- function(..., interval = 1) {
-   return(precintcon.ci.analysis(..., interval = interval))  
-}
+ci <- function(..., interval = 1) precintcon.ci.analysis(..., interval = interval, args = as.character(match.call()[1:length(list(...))+1]))

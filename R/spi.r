@@ -31,10 +31,4 @@ NULL
 #' spi(monthly, period = 3)
 #' @keywords rainfall anomaly index precipitation
 #' @export 
-spi <- function(
-      object, 
-      period       = 3, 
-      distribution = "Gamma"
-) {
-   return(precintcon.spi.analysis(object, period, distribution))  
-}
+spi <- function(object, period = 3, distribution = "Gamma") precintcon.spi.analysis(object, period, distribution)

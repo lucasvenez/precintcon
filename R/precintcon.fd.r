@@ -2,9 +2,9 @@ precintcon.fd <- function(object) {
    
 	if (is.element("precintcon.classified", class(object))) {
 	
-      ##
-      # Frequency distribution
-      #
+    ##
+    # Frequency distribution
+    #
 		m = (object[,1] + object[,2] + 0.1)/2
 		
 		data <- data.frame(

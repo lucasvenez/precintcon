@@ -30,6 +30,4 @@ NULL
 #' rai(monthly, granularity = "m")
 #' @keywords rainfall anomaly index precipitation
 #' @export 
-rai <- function(object, granularity = "m") {
-   return(precintcon.rai.analysis(object, granularity))
-}
+rai <- function(object, granularity = "m") precintcon.rai.analysis(object, granularity)

@@ -1,14 +1,19 @@
 #' @name trend.test
-#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
 #' @aliases precintcon.trend.test 
-#' @title trend.test 
-#' @description trend.test 
+#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
+#' 
+#' @title Mann-Kendall Trend Test
+#' @description It calculates a trend test using the rank-based nonparametric Mann-Kendall method.
 #' @usage trend.test(object, significance.level = 0.05)
-#' @param object is a daily precipitation serie
-#' @param significance.level is 
+#' @param object is a daily or monthly precipitation serie.
+#' @param significance.level is the significance level to be considered in the analysis. 
+#' It is usually equals to 5% (default: 0.05).
 #' @return A trend test index.
 #' @seealso \code{\link{ci}} \code{\link{ci.per.year}} \code{\link{pci}} \code{\link{read.data}}
-#' @keywords precipitation trend test 
+#' @keywords precipitation trend test
+#' @references
+#' H. B. Mann (1945). Nonparametric tests against trend. Econometrica, vol. 13, pp. 245–259.
+#' M. G. Kendall (1975). Rank Correlation Methods. Griffin, London, UK.
 #' @export
 trend.test <- function(object, significance.level = 0.05) {
 
@@ -27,7 +32,7 @@ trend.test <- function(object, significance.level = 0.05) {
 		data <- object
 	
 	else
-		stop("Invalud data. Please, check your input object.")
+		stop("Invalid data. Please, check your input object.")
 	
 	n <- length(data)
 	

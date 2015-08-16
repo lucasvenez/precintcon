@@ -32,6 +32,4 @@ NULL
 #' stat(monthly)
 #' @keywords summary precipitation 
 #' @export
-stat <- function(...) {
-   return(precintcon.stat.analysis(...))
-}
+stat <- function(...) precintcon.stat.analysis(..., args = as.character(match.call()[1:length(list(...))+1]))

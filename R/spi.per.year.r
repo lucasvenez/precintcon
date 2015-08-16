@@ -32,11 +32,5 @@ NULL
 #' spi.per.year(monthly, period = 3)
 #' @keywords rainfall anomaly index precipitation 
 #' @export
-spi.per.year <- function(
-      object, 
-      period       = 3, 
-      distribution = "Gamma", 
-      FUN          = mean
-) {
-   return(precintcon.spi.per.year.analysis(object, period, distribution, FUN)) 
-}
+spi.per.year <- function(object, period = 3, distribution = "Gamma", FUN = mean) 
+  precintcon.spi.per.year.analysis(object, period, distribution, FUN)
