@@ -2,11 +2,13 @@
 NULL
 
 #' @name rai 
-#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
+#' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
+#' @export 
 #' @aliases precintcon.rai.analysis rai 
 #' @title Rainfall Anomaly Index 
 #' @description Calculates the Rainfall Anomaly Index (RAI) on a daily or 
-#' monthly precipitation serie. 
+#' monthly precipitation serie.
+#' @references Van Rooy, M. P. "A rainfall anomaly index independent of time and space." Notos 14.43 (1965): 6. 
 #' @usage rai(object, granularity = "m") 
 #' @param object a daily or monthly precipitation serie.
 #' @param granularity the granularity applied for calculating the rainfall anomaly index, 
