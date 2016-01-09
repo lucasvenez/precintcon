@@ -34,18 +34,17 @@ precintcon.plot.rai <- function(
 			varl <- as.list(legend)
 		
 		plotl <- mapply(p.plot.rai, l, varl, 
-			MoreArgs = list(g=granularity, 
-				xlab=xlab, ylab=ylab, ylim=ylim, fontsize=fontsize, 
-				axis.text.color=axis.text.color),
-			SIMPLIFY=FALSE)
+			MoreArgs = list(g = granularity, 
+				xlab = xlab, ylab = ylab, ylim = ylim, fontsize = fontsize, 
+				axis.text.color = axis.text.color),
+			SIMPLIFY = FALSE)
 		
 		for (i in 1:length(plotl)) {
-			
-			if (!export)
+			if (!export){
 				print(plotl[[i]])
-			
-			else
-				ggsave(paste(varl[[i]], export.name, sep="_"), plotl[[i]], width=width, height=height, units=units)
+			}else{
+				ggsave(paste(varl[[i]], export.name, sep = "_"), plotl[[i]], width = width, height = height, units = units)
+			}
 		}
 					
 		par(ask = F)
@@ -74,22 +73,31 @@ p.plot.rai <- function(d, n, g,
 			}
 			
 			data <- data.frame(
-				x = as.Date(paste(d[ ,1], if (g == "m") d[ ,2] else "01", "01", sep = "/"), "%Y/%m/%d"), 
-				y =  d$rai, dataset = paste(n, sep=""))
+				x = as.Date(
+					paste(d[ ,1], 
+								if(g == "m"){
+									d[ ,2]
+								}else{
+									"01"
+								}
+								, "01", sep = "/"), "%Y/%m/%d"), 
+				y =  d$rai,
+				dataset = paste(n, sep="")
+				)
 		
 		} else {
 			stop("invalid granularity value. It should be either 'a' for annual or 'm' for monthly")
 		}
 		
-		p <- ggplot(data, aes_string(x = "x", y = "y")) + geom_bar(stat = "identity", position="identity") +  
+		p <- ggplot(data, aes_string(x = "x", y = "y")) + geom_bar(stat = "identity", position = "identity") +  
 				xlab(xlab) + ylab(ylab) + 
-				scale_x_date(expand = c(1/48, 1/48), 
-						limits = as.Date(c(data[1,1], tail(data$x, n = 1))), 
-						breaks = ifelse(g == "m", "20 months", "years"), 
-						labels = date_format(ifelse(g == "m", "%b %y", "%Y")), 
-						minor_breaks = date_breaks(ifelse( g == "m", "1 month", "1 year"))) +
-				scale_y_continuous(breaks = seq(round(min(data$y), digits = 2) - .5, round(max(data$y), digits = 2) + .5, by = 1), 
-						limits = c(round(min(data$y), digits = 2) - .5, round(max(data$y), digits = 2) + .5)) +
+ 				scale_x_date(expand = c(1/48, 1/48), 
+ 						limits = as.Date(c(data[1, 1], tail(data$x, n = 1))), 
+ 						date_breaks = ifelse(g == "m", "20 months", "years"), 
+ 						labels = date_format(ifelse(g == "m", "%b %y", "%Y")), 
+ 						date_minor_breaks = ifelse(g == "m", "1 month", "1 year")) +
+ 				scale_y_continuous(breaks = seq(round(min(data$y), digits = 2) - .5, round(max(data$y), digits = 2) + .5, by = 1), 
+ 						limits = c(round(min(data$y), digits = 2) - .5, round(max(data$y), digits = 2) + .5)) +
 				theme(text = element_text(size = fontsize), 
 						axis.text = element_text(color = axis.text.color),
 						axis.text.x = element_text(angle = 25),
