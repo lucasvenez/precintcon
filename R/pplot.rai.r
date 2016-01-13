@@ -58,7 +58,7 @@ pplot.rai <- function(
    height          = 7.5, 
    units            = "cm"
 ) {
-	precintcon.plot.rai(..., granularity = granularity, xlab = xlab, ylab = ylab, 
+   precintcon.plot.rai(..., granularity = granularity, xlab = xlab, ylab = ylab, 
          ylim = ylim, legend = legend, fontsize = fontsize, 
          axis.text.color = axis.text.color, export = export, 
          export.name = export.name, width = width, height = height, units = units)
