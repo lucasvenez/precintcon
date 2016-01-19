@@ -33,6 +33,9 @@
 #' ylim ggsave xlab scale_fill_discrete geom_histogram geom_density geom_ribbon scale_x_continuous
 #' scale_color_hue scale_fill_hue geom_point
 #' @importFrom scales percent_format date_format date_breaks
+#' @importFrom graphics par
+#' @importFrom stats aggregate pgamma pnorm quantile sd uniroot var
+#' @importFrom utils read.table tail
 NULL
 
 #' Daily precipitation between 1976 and 2010

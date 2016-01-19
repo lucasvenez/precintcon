@@ -77,8 +77,8 @@ p.plot.spi <- function(d, n,
 				xlab(xlab) + ylab(ylab) + 
 				scale_x_date(expand = c(1/48, 1/48), 
 						limits = as.Date(c(data[1,1], tail(data$x, n = 1))), 
-						breaks = "20 months", labels = date_format("%b %y"), 
-						minor_breaks = date_breaks("1 month")) +
+						date_breaks = "20 months", labels = date_format("%b %y"), 
+						date_minor_breaks = "1 month") +
 				scale_y_continuous(breaks = seq(-3, 3, by = 1), limits = c(-3.5, 3.5)) +
 				theme(text = element_text(size = fontsize), 
 					axis.text = element_text(color = axis.text.color),

@@ -24,7 +24,7 @@
    pages   = {1259--1265},
    doi     = {10.5194/nhess-11-1259-2011}}
 
-﻿@article {ci,
+@article {ci,
    author    = {Martin-Vide, Javier},
    title     = {Spatial distribution of a daily precipitation 
                 concentration index in peninsular Spain},
@@ -37,7 +37,7 @@
    pages     = {959--971},
    year      = {2004}}
 
-﻿@article {spi,
+@article {spi,
    author    = {Guttman, Nathaniel B.},
    title     = {Accepting the Standardized Precipitation Index: a calculation algorithm},
    journal   = {Journal of the American Water Resources Association},
@@ -48,16 +48,11 @@
    doi       = {10.1111/j.1752-1688.1999.tb03592.x},
    pages     = {311--322},
    year      = {1999}}
-
+  
 @article{rai,
-   author    = {Barring, L. and Hulme, M.},
-   title     = {Filters and Approximate Confidence Intervals for Interpreting Rainfall Anomaly indices},
-   journal   = {Journal of Climate},
-   year      = {1991},
-   month     = {Aug},
-   publisher = {American Meteorological Society},
-   volume    = {4},
-   number    = {8},
-   pages     = {837--847},
-   issn      = {0894-8755},
-   doi       = {10.1175/1520-0442(1991)004<0837:FAACIF>2.0.CO;2}}
+   author    = {Rooy, M. P. van},
+   title     = {A Rainfall anomaly index independent of time and space}
+   journal   = {Notos},
+   volume    = {14},
+   pages     = {43 -- 48},
+   year      = {1965}}

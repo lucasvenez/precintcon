@@ -41,6 +41,7 @@ NULL
 #' ##
 #' # Performing the a set of statistical analysis
 #' pplot.rai(daily, granularity = "m")
+#' @references Rooy, M. P. van. A Rainfall anomaly index independent of time and space, Notos. v.14, p.43-48, 1965.
 #' @keywords rainfall anomaly precipitation 
 #' @export
 pplot.rai <- function(

@@ -1,4 +1,3 @@
-
 #' @include precintcon.plot.deciles.r
 NULL
 
@@ -7,14 +6,12 @@ NULL
 #' @aliases precintcon.plot.deciles pplot.deciles
 #' @title Plot deciles
 #' @description Plots the deciles of a precipitation serie.
-#' @usage pplot.deciles(\dots, grouped = FALSE, ylab = "Precipitation", 
+#' @usage pplot.deciles(\dots, ylab = "Precipitation", 
 #' legend.title = "Legend", legend = NULL, 
 #' fontsize = 10, axis.text.color = "black", 
 #' export = FALSE, export.name = "deciles_plot.png",
-#' width = 8.6, height = 7.5, units = "cm")
+#' width = 8.6, height = 7.5, units = "cm", grouped = FALSE)
 #' @param \dots a set of daily or monthly precipitation serie.
-#' @param grouped a logical value that defines whether all datasets should be 
-#' plotted in the same graph or not. (Default value: FALSE)
 #' @param ylab the text for the y axis. (Default value: "Precipitation")
 #' @param legend.title the text for the legend title. (Default value: "Legend")
 #' @param legend the text vector for the legend items. If NULL the legends will 
@@ -31,6 +28,8 @@ NULL
 #' used if export = TRUE. (Default value: 7.5)
 #' @param units the text for defining the units of the height and width 
 #' parameters. It is only used if export = TRUE. (Default value: "cm")
+#' @param grouped the logical value for defining whether the graphs should be plotted in
+#' group. 
 #' @seealso 
 #' \code{\link{deciles}}
 #' \code{\link{read.data}}
@@ -45,7 +44,6 @@ NULL
 #' @keywords deciles precipitation
 #' @export 
 pplot.deciles <- function(...,
-	grouped         = FALSE,
 	ylab            = "Precipitation",
 	legend.title    = "Legend",
 	legend          = NULL,
@@ -55,10 +53,18 @@ pplot.deciles <- function(...,
 	export.name     = "deciles_plot.png", 
 	width           = 8.6, 
 	height          = 7.5, 
-	units            = "cm"
-) {
-	precintcon.plot.deciles(..., grouped = grouped, ylab = ylab, 
-         legend.title = legend.title, legend = legend, fontsize = fontsize, 
-         axis.text.color = axis.text.color, export = export, 
-         export.name = export.name, width = width, height = height, units = units)
-}
+	units           = "cm",
+	grouped         = FALSE
+)
+	precintcon.plot.deciles(..., 
+	ylab            = ylab, 
+	legend.title    = legend.title,
+	legend          = legend,
+	fontsize        = fontsize, 
+  axis.text.color = axis.text.color, 
+	export          = export, 
+  export.name     = export.name, 
+	width           = width, 
+	height          = height, 
+	units           = units,
+  grouped         = grouped)

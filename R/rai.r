@@ -28,6 +28,7 @@ NULL
 #' ##
 #' # Performing the Rainfall Anomaly Index analysis
 #' rai(monthly, granularity = "m")
+#' @references Van Rooy, M. P. "A rainfall anomaly index independent of time and space." Notos 14.43 (1965): 6.
 #' @keywords rainfall anomaly index precipitation
 #' @export 
 rai <- function(object, granularity = "m") precintcon.rai.analysis(object, granularity)

@@ -6,7 +6,7 @@ NULL
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
 #' 
 #' @title Precipitation Concentration Index
-#' @description Calculates the Precipitation Concentration Index (PCI) on a 
+#' @description It calculates the Precipitation Concentration Index (PCI) on a 
 #' daily or monthly precipitation serie.
 #' @usage pci(object)
 #' @param object a daily or monthly precipitation serie.

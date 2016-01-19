@@ -6,8 +6,7 @@ NULL
 #' @aliases precintcon.plot.histogram pplot.histogram 
 #' @title Plot histogram
 #' @description Plots the histogram of a precipitation serie. 
-#' @usage pplot.histogram(\dots, density = FALSE, 
-#' grouped = FALSE, xlab = "Precipitation (mm)", 
+#' @usage pplot.histogram(\dots, density = FALSE, xlab = "Precipitation (mm)", 
 #' ylab = "Frequency", legend.title = "Legend", 
 #' legend = NULL, fontsize = 10, axis.text.color = "black", 
 #' export = FALSE, export.name = "histogram_plot.png", 
@@ -15,8 +14,6 @@ NULL
 #' @param \dots a set of daily or monthly precipitation series.
 #' @param density the logical value for defining whether the graph should be 
 #' plotted with bars or lines. (Default value: FALSE)
-#' @param grouped the logical value for defining whether the series should 
-#' be plotted in the same graph or not. (Default value: FALSE)
 #' @param xlab the text for the x axis. (Default value: "Precipitation (mm)")
 #' @param ylab the text for the y axis. (Default value: "Frequency")
 #' @param legend.title the text for the legend title. (Default value: "Legend")
@@ -49,11 +46,10 @@ NULL
 pplot.histogram <- function(
    ..., 
 	density         = FALSE, 
-	grouped         = FALSE,
 	xlab            = "Precipitation (mm)",
 	ylab            = "Frequency",
-   legend.title    = "Legend", 
-   legend          = NULL,
+  legend.title    = "Legend", 
+  legend          = NULL,
 	fontsize        = 10,
 	axis.text.color = "black", 
 	export          = FALSE, 
@@ -62,8 +58,9 @@ pplot.histogram <- function(
 	height          = 10, 
 	units           = "cm"
 ) {
-   precintcon.plot.histogram(..., density = density, grouped = grouped, 
+   precintcon.plot.histogram(..., density = density,
          xlab = xlab, ylab = ylab, legend.title = legend.title, legend = legend, 
          fontsize = fontsize, axis.text.color = axis.text.color, export = export, 
-         export.name = export.name, width = width, height = height, units = units)	
+         export.name = export.name, width = width, height = height, units = units,
+         args = as.character(match.call()[1:length(list(...))+1]))	
 }

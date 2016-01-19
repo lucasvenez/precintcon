@@ -13,7 +13,8 @@ precintcon.plot.histogram <- function(
 	export.name     = "histogram_plot.png", 
 	width           = 10, 
 	height          = 10, 
-	units           = "cm"
+	units           = "cm",
+	args            = NA
 ) {
 	
 	l <- list(...)
@@ -23,7 +24,7 @@ precintcon.plot.histogram <- function(
 		if (length(l) > 1 && !export && !grouped)
 			par(ask = TRUE)
 		
-		varl <- as.list(match.call()[1:length(l)+1])
+		varl <- ifelse(is.na(args), as.character(match.call()[1:length(l)+1]), args)
 
 		if (!is.null(legend) && length(varl) != length(legend)) {
 			stop(paste("legend should has length equals to the number of input data. legend parameter length", 

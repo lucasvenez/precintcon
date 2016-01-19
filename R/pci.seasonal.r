@@ -1,7 +1,8 @@
 #' @name pci.seasonal
 #' @aliases pci.seasonal
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
-#' 
+#' @description It calculates the Precipitation Concentration Index (PCI) in a seasonal granularity 
+#' on a daily or monthly precipitation serie.
 #' @title Seasonal Precipitation Concentration Index
 #' @param object is a daily or monthly precipitation serie
 #' @param hemisthere is the hemisthere, "n" for northern and "s" for south, of the precipitation serie
@@ -34,11 +35,15 @@ pci.seasonal <- function(object, hemisthere) {
     
     if (nrow(object) - i < 2) break
     
+    pci <- (sum(object[i:(i+2),3]**2)/sum(object[i:(i+2),3])**2)*25
+    
+    pci <- ifelse(is.nan(pci), 0, pci)
+    
     result <- rbind(result, 
               data.frame(
                 year         = object[i,1], 
                 season       = station[abs((i - start) %/% 3 + ifelse(hemisthere == "n", 0, 2)) %% 4 + 1], 
-                pci.seasonal = (sum(object[i:(i+2),3]**2)/sum(object[i:(i+2),3])**2)*25))
+                pci.seasonal = pci))
   }
   
   class(result) <- c("data.frame", "precintcon.seasonal")

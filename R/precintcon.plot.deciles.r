@@ -1,6 +1,5 @@
 #' @export 
 precintcon.plot.deciles <- function(...,
-	grouped         = FALSE,
 	ylab            = "Precipitation",
 	legend.title    = "Legend",
 	legend          = NULL,
@@ -10,7 +9,10 @@ precintcon.plot.deciles <- function(...,
 	export.name     = "deciles_plot.png", 
 	width           = 8.6, 
 	height          = 7.5, 
-	units           = "cm"
+	units           = "cm",
+	ylim            = NA,
+	args            = NA,
+	grouped         = FALSE
 ) {
 	
 	l <- list(...)
@@ -68,39 +70,6 @@ precintcon.plot.deciles <- function(...,
 		mapply(f, l, max = max, min = min, fontsize = fontsize, axis.text.color = axis.text.color, 
 		   export = export, export.name = export.name, width = width, height = height, units = units,
 		   MoreArgs = list(ylab = ylab), SIMPLIFY = FALSE)
-	
-	} else {
-	
-		#######
-		#
-		# Generating deciles for each input data
-		#
-		l <- mapply(function(d) as.precintcon.deciles(d), l, SIMPLIFY = FALSE)
-		
-		######
-		#
-		# list of data.frame to data.frame (rbind)
-		#
-		data <- do.call(rbind.data.frame, l)
-		
-		graph <- ggplot(data, aes_string(fill = "dataset")) + 
-				 geom_boxplot(
-						 aes_string(x = "dataset", ymin = "Q1", 
-							lower = "Q2", middle = "Q5", upper = "Q9", ymax = "Q10"), 
-					stat = "identity") + xlab(xlab) + ylab(ylab) +
-				 scale_fill_discrete(legend.title) +
-				 theme(text = element_text(size = fontsize),
-					axis.text = element_text(color = axis.text.color),
-					axis.title.x = element_blank(),
-		 			axis.text.x  = element_blank(),
-		 			axis.ticks.x = element_blank())
-		
-		if (!export) {
-			print(graph)
-		} else {
-			ggsave(export.name, graph, width = width, height = height, units = units)			 
-		}
-		 
 	}
 	
 	par(ask = F)
