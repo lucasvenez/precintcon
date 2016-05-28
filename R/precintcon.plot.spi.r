@@ -2,7 +2,7 @@
 precintcon.plot.spi <- function(
    ..., 
 	period          = 3, 
-   distribution    = "Gamma",
+   distribution   = "Gamma",
 	xlab            = "Months",
 	ylab            = "SPI", 
 	ylim            = c(-3,3),
@@ -12,8 +12,8 @@ precintcon.plot.spi <- function(
 	export          = FALSE, 
 	export.name     = "spi_plot.png", 
 	width           = 8.6, 
-   height          = 7.5, 
-   units            = "cm"
+   height         = 7.5, 
+   units          = "cm"
 ) {
 
 	l <- list(...)
