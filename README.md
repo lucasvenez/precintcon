@@ -11,6 +11,7 @@ concentration, and anomaly. It supports the following indices:
 * Rainfall Anomaly Index (RAI)
 * Precipitation Concentration Degree (PCD)
 * Precipitation Concentration Period (PCP)
+* Mann-Kendall Trend Test
 
 To install:
 
