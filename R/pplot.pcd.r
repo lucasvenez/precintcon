@@ -3,9 +3,10 @@
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
 #' @title Plot Precipitation Concentration Degree
 #' @description Plots the Precipitation Concentraition Degre per year of a precipitation serie. 
-#' @usage pplot.pcp(\dots, azimuth = seq(0, 330, by = 30), xlab = "Year", ylab = "PCD", 
-#' 				ylim = c(0,360), legend = NULL, fontsize = 10, axis.text.color = "black", 
-#' 				export = FALSE, export.name = "pcd_plot.png", width = 8.6, height = 7.5, units = "cm") 
+#' @usage pplot.pcd(\dots, azimuth = seq(0, 330, by = 30), xlab = "Year", ylab = "PCD", 
+#'        ylim = c(0,360), legend = NULL, fontsize = 10, axis.text.color = "black", 
+#'        export = FALSE, export.name = "pcd_plot.png", width = 8.6, 
+#'        height = 7.5, units = "cm") 
 #' @param \dots a set of daily or monthly precipitation series.
 #' @param azimuth the vector with corresponding degrees of each year. (Default value: 0, 30, 60, \dots, 330)
 #' @param xlab the text for the x axis. (Default value: "Year")
@@ -25,7 +26,9 @@
 #' if export = TRUE. (Default value: 7.5)
 #' @param units the text for defining the units of the height and width parameters. 
 #' It is only used if export = TRUE. (Default value: "cm")
-#' @seealso \code{\link{read.data}}
+#' @seealso 
+#' \code{\link{pcd}}
+#' \code{\link{read.data}}
 #' @examples 
 #' ##
 #' # Loading the daily precipitation serie.
@@ -33,8 +36,8 @@
 #' 
 #' ##
 #' # Plotting PCD index per year
-#' pplot.pcd(daily, granularity = "m")
-#' @references Zhang LJ, Qian YF (2003) Annual distribution features of precipitation in China and their interannual variations. J Acta Meteorological Sinica 17:146–163
+#' pplot.pcd(daily)
+#' @references Zhang LJ, Qian YF (2003) Annual distribution features of precipitation in China and their interannual variations. J Acta Meteorological Sinica 17:146-163
 #' @keywords precipitation concentration degree PCD
 #' @export
 pplot.pcd <- function(
@@ -74,7 +77,7 @@ pplot.pcd <- function(
   
   plotl <- do.call(rbind, plotl)
   
-  plot <- ggplot(plotl, aes(x = year, y = x)) + geom_line(size = 1) +
+  plot <- ggplot(plotl, aes_string(x = "year", y = "pcd")) + geom_line(size = 1) +
           xlab(xlab) + ylab(ylab) + facet_grid(. ~ dataset, scales = "free_x")
   
   rm(plotl, varl)

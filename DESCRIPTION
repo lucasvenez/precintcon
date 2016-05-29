@@ -1,8 +1,8 @@
 Package: precintcon
 Type: Package
 Title: Precipitation Intensity, Concentration and Anomaly Analysis
-Version: 2.2.1
-Date: 2016-01-19
+Version: 2.3.0
+Date: 2016-05-26
 LazyData: true
 Author: Lucas Venezian Povoa  [aut, cre],
     Jonas Teixeira Nery [ctb]
@@ -43,20 +43,25 @@ Collate:
     'ff.index.r'
     'precintcon.limits.analysis.r'
     'limits.r'
+    'pcd.r'
     'precintcon.pci.analysis.r'
     'pci.r'
     'pci.seasonal.r'
     'pci.supraseasonal.r'
+    'pcp.r'
     'precintcon.pn.analysis.r'
     'pn.r'
+    'precintcon.plot.lorenz.r'
+    'pplot.ci.r'
     'precintcon.plot.deciles.r'
     'pplot.deciles.r'
     'precintcon.plot.histogram.r'
     'pplot.histogram.r'
-    'precintcon.plot.lorenz.r'
     'pplot.lorenz.r'
+    'pplot.pcd.r'
     'precintcon.plot.pci.r'
     'pplot.pci.r'
+    'pplot.pcp.r'
     'precintcon.plot.pn.r'
     'pplot.pn.r'
     'precintcon.plot.rai.r'

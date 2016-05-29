@@ -27,7 +27,7 @@
 #' # Performing the Precipitation Concentration Index analysis
 #' pcd(monthly)
 #' @references Zhang LJ, Qian YF (2003) Annual distribution features of precipitation in China and their interannual variations. 
-#' J Acta Meteorological Sinica 17:146–163
+#' J Acta Meteorological Sinica 17:146-163
 #' @keywords precipitation concentration degree PCD
 #' @export
 pcd <- function(

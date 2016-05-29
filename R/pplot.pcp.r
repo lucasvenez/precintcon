@@ -3,11 +3,12 @@
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
 #' @title Plot Precipitation Concentration Period per Year 
 #' @description Plots the Precipitation Concentration Period per year of a precipitation serie. 
-#' @usage pplot.pcd(\dots, azimuth = seq(0, 330, by = 30), xlab = "Year", ylab = "PCD", 
-#' 				ylim = c(0,360), legend = NULL, fontsize = 10, axis.text.color = "black", 
-#' 				export = FALSE, export.name = "pcd_plot.png", width = 8.6, height = 7.5, units = "cm") 
+#' @usage pplot.pcp(\dots, azimuth = seq(0, 330, by = 30), xlab = "Year", 
+#'        ylab = "PCP", ylim = c(0,360), legend = NULL, fontsize = 10, 
+#'        axis.text.color = "black", export = FALSE, export.name = "pcd_plot.png", 
+#'        width = 8.6, height = 7.5, units = "cm") 
 #' @param \dots a set of daily or monthly precipitation series.
-#' @param azimuth the vector with corresponding degrees of each year. (Default value: 0, 30, 60, ..., 330)
+#' @param azimuth the vector with corresponding degrees of each year. (Default value: 0, 30, 60, \dots, 330)
 #' @param xlab the text for the x axis. (Default value: "Year")
 #' @param ylab the text for the y axis. (Default value: "PCD")
 #' @param ylim the limits of the y axis. (Default value: c(0, 360))
@@ -25,17 +26,19 @@
 #' if export = TRUE. (Default value: 7.5)
 #' @param units the text for defining the units of the height and width parameters. 
 #' It is only used if export = TRUE. (Default value: "cm")
-#' @seealso \code{\link{read.data}}
+#' @seealso 
+#' \code{\link{pcp}}
+#' \code{\link{read.data}}
 #' @examples 
 #' ##
 #' # Loading the daily precipitation serie.
 #' data(daily)
 #' 
 #' ##
-#' # Performing the a set of statistical analysis
-#' pplot.rai(daily, granularity = "m")
-#' @references Zhang LJ, Qian YF (2003) Annual distribution features of precipitation in China and their interannual variations. J Acta Meteorological Sinica 17:146–163
-#' @keywords rainfall anomaly precipitation 
+#' # Plotting PCP per year
+#' pplot.pcp(daily)
+#' @references Zhang LJ, Qian YF (2003) Annual distribution features of precipitation in China and their interannual variations. J Acta Meteorological Sinica 17:146-163
+#' @keywords precipitation concentration period (PCP)
 #' @export
 pplot.pcp <- function(
   ..., 
@@ -74,7 +77,7 @@ pplot.pcp <- function(
   
   plotl <- do.call(rbind, plotl)
   
-  plot <- ggplot(plotl, aes(x = year, y = x)) + geom_line(size = 1) +
+  plot <- ggplot(plotl, aes_string(x = "year", y = "pcp")) + geom_line(size = 1) +
     xlab(xlab) + ylab(ylab) + facet_grid(. ~ dataset, scales = "free_x")
   
   rm(plotl, varl)

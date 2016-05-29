@@ -3,7 +3,7 @@ NULL
 
 #' @name pplot.lorenz
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com}
-#' @aliases precintcon.plot.lorenz pplot.lorenz
+#' @aliases precintcon.plot.lorenz pplot.lorenz pplot.ci
 #' @title Plot Lorenz's curve
 #' @description Plots the Lorenz's curve of a precipitation serie.
 #' @usage pplot.lorenz(\dots, interval = 1, grouped = FALSE, 
@@ -47,7 +47,7 @@ NULL
 #'
 #' ##
 #' # Performing the a set of statistical analysis
-#' pplot.lorenz(daily, interval = 1)
+#' pplot.ci(daily, interval = 1)
 #' @keywords lorenz's curve precipitation
 #' @export
 pplot.lorenz <- function(

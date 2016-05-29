@@ -9,6 +9,8 @@ concentration, and anomaly. It supports the following indices:
 * Precipitation Concentration Index (PCI)
 * Standardized Precipitation Index (SPI) 
 * Rainfall Anomaly Index (RAI)
+* Precipitation Concentration Degree (PCD)
+* Precipitation Concentration Period (PCP)
 
 To install:
 
@@ -24,5 +26,5 @@ data(daily)
 
 ci(daily, interval = 1)
 
-pplot.lorenz(daily, interval = 1)
+pplot.ci(daily, interval = 1)
 ```
