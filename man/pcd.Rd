@@ -4,12 +4,10 @@
 \alias{pcd}
 \title{Precipitation Concentration Degree}
 \usage{
-pcd(object, azimuth = seq(0, 330, by = 30))
+pcd(object)
 }
 \arguments{
 \item{object}{a daily or monthly precipitation serie.}
-
-\item{azimuth}{a set of degrees for each month of an year.}
 }
 \value{
 A data.frame containing the following variables:

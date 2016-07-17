@@ -3,12 +3,11 @@
 #' @author Lucas Venezian Povoa \email{lucasvenez@@gmail.com} 
 #' @title Plot Precipitation Concentration Period per Year 
 #' @description Plots the Precipitation Concentration Period per year of a precipitation serie. 
-#' @usage pplot.pcp(\dots, azimuth = seq(0, 330, by = 30), xlab = "Year", 
+#' @usage pplot.pcp(\dots, xlab = "Year", 
 #'        ylab = "PCP", ylim = c(0,360), legend = NULL, fontsize = 10, 
 #'        axis.text.color = "black", export = FALSE, export.name = "pcd_plot.png", 
 #'        width = 8.6, height = 7.5, units = "cm") 
 #' @param \dots a set of daily or monthly precipitation series.
-#' @param azimuth the vector with corresponding degrees of each year. (Default value: 0, 30, 60, \dots, 330)
 #' @param xlab the text for the x axis. (Default value: "Year")
 #' @param ylab the text for the y axis. (Default value: "PCD")
 #' @param ylim the limits of the y axis. (Default value: c(0, 360))
@@ -42,7 +41,6 @@
 #' @export
 pplot.pcp <- function(
   ..., 
-  azimuth         = seq(0, 330, by = 30),
   xlab            = "Year",
   ylab            = "PCP", 
   ylim            = c(0,360),
@@ -70,15 +68,16 @@ pplot.pcp <- function(
   else if (!is.null(legend))
     varl <- as.list(legend)
   
-  plotl <- mapply(FUN = function(x, y, azimuth) 
-    cbind(pcp(x, azimuth), data.frame(dataset = as.character(y))), 
-    l, varl, MoreArgs = list(azimuth = azimuth), SIMPLIFY = FALSE)
+  plotl <- mapply(FUN = function(x, y) 
+    cbind(pcp(x), data.frame(dataset = as.character(y))), 
+    l, varl, SIMPLIFY = FALSE)
   
   
   plotl <- do.call(rbind, plotl)
   
-  plot <- ggplot(plotl, aes_string(x = "year", y = "pcp")) + geom_line(size = 1) +
-    xlab(xlab) + ylab(ylab) + facet_grid(. ~ dataset, scales = "free_x")
+  plot <- ggplot(plotl, aes_string(x = "year", y = "pcp")) + 
+            geom_bar(stat = "identity", position = "identity") +
+            xlab(xlab) + ylab(ylab) + facet_grid(. ~ dataset, scales = "free_x")
   
   rm(plotl, varl)
   

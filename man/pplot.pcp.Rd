@@ -4,14 +4,12 @@
 \alias{pplot.pcp}
 \title{Plot Precipitation Concentration Period per Year}
 \usage{
-pplot.pcp(\dots, azimuth = seq(0, 330, by = 30), xlab = "Year", 
+pplot.pcp(\dots, xlab = "Year", 
        ylab = "PCP", ylim = c(0,360), legend = NULL, fontsize = 10, 
        axis.text.color = "black", export = FALSE, export.name = "pcd_plot.png", 
        width = 8.6, height = 7.5, units = "cm")
 }
 \arguments{
-\item{azimuth}{the vector with corresponding degrees of each year. (Default value: 0, 30, 60, \dots, 330)}
-
 \item{xlab}{the text for the x axis. (Default value: "Year")}
 
 \item{ylab}{the text for the y axis. (Default value: "PCD")}

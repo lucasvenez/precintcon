@@ -35,7 +35,7 @@
 #' @importFrom scales percent_format date_format date_breaks
 #' @importFrom graphics par
 #' @importFrom stats aggregate pgamma pnorm quantile sd uniroot var
-#' @importFrom utils read.table tail
+#' @importFrom utils read.table tail head
 NULL
 
 #' Daily precipitation between 1976 and 2010

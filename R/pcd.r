@@ -4,9 +4,8 @@
 #' @title Precipitation Concentration Degree
 #' @description Calculates the Precipitation Concentration Degree (PCD) on a 
 #' daily or monthly precipitation serie.
-#' @usage pcd(object, azimuth = seq(0, 330, by = 30))
+#' @usage pcd(object)
 #' @param object a daily or monthly precipitation serie.
-#' @param azimuth a set of degrees for each month of an year.
 #' @return A data.frame containing the following variables:
 #' \itemize{
 #' \item \code{year} is the year.
@@ -30,9 +29,7 @@
 #' J Acta Meteorological Sinica 17:146-163
 #' @keywords precipitation concentration degree PCD
 #' @export
-pcd <- function(
-  object, 
-  azimuth = seq(0, 330, by = 30)) {
+pcd <- function(object) {
 	
 	if (is.element("precintcon.daily", class(object)))
 		object <- as.precintcon.monthly(object);
@@ -40,9 +37,9 @@ pcd <- function(
 	if (!is.element("precintcon.monthly", class(object)))
 		stop(paste("Invalid data. Please, check your input object. Actual object type:", class(object), sep = " "))
 	
-	azimuth <- azimuth * 0.0174532925
-	
 	r <- as.annual(object)
+	
+	azimuth <- 360 * object$month / 12
 	
 	rx <- aggregate(object$precipitation * sin(azimuth), by = list(object$year), FUN = sum)[2]
 	

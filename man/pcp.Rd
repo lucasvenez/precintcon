@@ -4,12 +4,10 @@
 \alias{pcp}
 \title{Precipitation Concentration Period}
 \usage{
-pcp(object, azimuth = seq(0, 330, by = 30))
+pcp(object)
 }
 \arguments{
 \item{object}{a daily or monthly precipitation serie.}
-
-\item{azimuth}{a set of degrees corresponding to each month of an year.}
 }
 \value{
 A data.frame containing the following variables:
@@ -37,7 +35,7 @@ pcd(monthly)
 Lucas Venezian Povoa \email{lucasvenez@gmail.com}
 }
 \references{
-Zhang LJ, Qian YF (2003) Annual distribution features of precipitation in China and their interannual variations. J Acta Meteorological Sinica 17:146-163
+Zhang L.J., Qian Y.F. (2003) Annual distribution features of precipitation in China and their interannual variations. J Acta Meteorological Sinica 17:146-163
 }
 \seealso{
 \code{\link{pplot.pcp}}
