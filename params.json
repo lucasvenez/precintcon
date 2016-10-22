@@ -1,0 +1,6 @@
+{
+  "name": "Precintcon",
+  "tagline": "An R package to analyze the precipitation intensity, concentration, and anomaly.",
+  "body": "`precintcon` supports the following indices:\r\n\r\n* Percent of Normal (PN)\r\n* Deciles\r\n* Concentration Index (CI)\r\n* Precipitation Concentration Index (PCI)\r\n* Standardized Precipitation Index (SPI) \r\n* Rainfall Anomaly Index (RAI)\r\n* Precipitation Concentration Degree (PCD)\r\n* Precipitation Concentration Period (PCP)\r\n* Mann-Kendall Trend Test\r\n\r\nTo install:\r\n\r\n* the latest released version: `install.packages(\"precintcon\")`\r\n* the latest development version: `install_github(\"lucasvenez/precintcon\")`\r\n\r\nGetting start:\r\n\r\n```R\r\nrequire(precintcon)\r\n\r\ndata(daily)\r\n\r\nci(daily, interval = 1)\r\n\r\npplot.ci(daily, interval = 1)\r\n```",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
