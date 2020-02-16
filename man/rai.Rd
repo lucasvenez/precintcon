@@ -8,7 +8,7 @@
 rai(object, granularity = "m")
 }
 \arguments{
-\item{object}{a daily or monthly precipitation serie.}
+\item{object}{a daily or monthly precipitation series.}
 
 \item{granularity}{the granularity applied for calculating the rainfall anomaly index, 
 which should be either "m" for monthly granularity or "a" for annual granularity. (Default value: "m")}
